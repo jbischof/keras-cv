@@ -63,7 +63,7 @@ class NoiseScheduler:
             raise ValueError(f"Invalid beta schedule: {beta_schedule}.")
 
         self.alphas = 1.0 - self.betas
-        self.alphas_cumprod = ops.math.cumprod(self.alphas)
+        self.alphas_cumprod = ops.cumprod(self.alphas)
 
         self.variance_type = variance_type
         self.clip_sample = clip_sample
